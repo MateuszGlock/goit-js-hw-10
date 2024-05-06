@@ -9,14 +9,6 @@ const loader = document.querySelector('p.loader');
 const error = document.querySelector('p.error');
 const display = document.querySelector('div.cat-info');
 
-let cssLink = document.createElement('link');
-
-// Ustawianie właściwości rel, type i href
-cssLink.rel = 'stylesheet';
-cssLink.href = './index.css'; // Ścieżka do twojego pliku CSS
-
-document.head.appendChild(cssLink);
-
 fetchBreeds()
   .then(data => {
     loader.classList.add('hidden');
@@ -85,6 +77,5 @@ select.addEventListener('change', ev => {
     .catch(err => {
       loader.classList.add('hidden');
       console.error('Error', err);
-      // throw error;
     });
 });
